@@ -97,10 +97,14 @@ int main(void) {
   m_lista=criar();
   t_elemento m_nome;
   int t,pos=0,i=0,pos_mostrar,search,pos_excluir,removido,escolha,menu;
-  char dado[50];
+  char dado[50],nome_apagar[50];
   t_elemento *list_position_data;
   
   do{
+  printf("Olá, bem vindo a agenda feliz :)\n");
+  printf("Escolha uma opção:\n");
+  printf("1)Inserir\n2)Apagar\n3)Pesquisar\n4)Listar\n5)Sair\n");
+  scanf(" %d",&menu);
   switch (menu){
     case 1:
       // inserir 
@@ -111,9 +115,16 @@ int main(void) {
       printf("Digite o Telefone2: ");//printa msg3
       scanf(" %s",&m_nome.telefone2);
       t=inserir(&m_lista,pos,m_nome);
+      printf("\n");
       break;
     case 2:
       // apagar
+      scanf(" %s",&nome_apagar);
+      for(i = 0; i <= m_lista.n; i++)
+      if (strcmp(m_lista.vetor[i].nome,nome_apagar)){
+        printf("achei\n");
+      }
+    printf("\n");
       break;
     case 3:
       // função 3
@@ -121,12 +132,13 @@ int main(void) {
     case 4:
       // listar
       for(i = 0; i <= m_lista.n; i++){
-    printf("O nome do %d elemento e: [%s]\nO telefone1 e: [%s]\nO telefone2 e: [%s]\n", i , m_lista.vetor[i].nome,m_lista.vetor[i].telefone1,m_lista.vetor[i].telefone2);}
+    printf("O nome do %d elemento e: [%s]\nO telefone1 e: [%s]\nO telefone2 e: [%s]\n", i+1 , m_lista.vetor[i].nome,m_lista.vetor[i].telefone1,m_lista.vetor[i].telefone2);}
+    printf("\n");
       break;
     case 5:
-      // função 5
+      // sair
       break;
-  }scanf(" %d",&menu);}while (menu!=5);
+  }}while (menu!=5);
   
   return 0;
 }
