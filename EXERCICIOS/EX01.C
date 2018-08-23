@@ -105,7 +105,7 @@ int main(void) {
   printf("digite o indice que quer ver o nome:");
   scanf("%d",&pos_mostrar);
 
-  list_position_data = getElemento(&m_lista, pos_mostrar - 1);
+  list_position_data = getElemento(&m_lista, pos_mostrar - 1); //pega o valor armazenado na posição (pos_mostrar) da lista (m_lista) 
 
   printf("O valor armazenado na posicao %d e [%s]: \n",pos_mostrar, list_position_data);
 
